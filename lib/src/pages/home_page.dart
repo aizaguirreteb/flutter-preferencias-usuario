@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:preferencias/src/pages/settings_page.dart';
+import 'package:preferencias/src/widgets/menu_widget.dart';
 
 class HomePage extends StatelessWidget {
 
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Preferencias de Usuario'),
       ),
-      drawer: _crearMenu(context),
+      drawer: MenuWidget(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -26,46 +26,46 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Drawer _crearMenu( BuildContext context) {
+  // Drawer _crearMenu( BuildContext context) {
 
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            child: Container(),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/original.jpg'),
-                fit: BoxFit.cover
-              ),
-            ),
-          ),
+  //   return Drawer(
+  //     child: ListView(
+  //       padding: EdgeInsets.zero,
+  //       children: <Widget>[
+  //         DrawerHeader(
+  //           child: Container(),
+  //           decoration: BoxDecoration(
+  //             image: DecorationImage(
+  //               image: AssetImage('assets/original.jpg'),
+  //               fit: BoxFit.cover
+  //             ),
+  //           ),
+  //         ),
 
-          ListTile(
-            leading: Icon( Icons.pages, color: Colors.blue,),
-            title: Text('Home'),
-            onTap: () => Navigator.pushReplacementNamed(context, HomePage.routeName),
-          ),
-          ListTile(
-            leading: Icon( Icons.party_mode, color: Colors.blue,),
-            title: Text('Party'),
-          ),
-          ListTile(
-            leading: Icon( Icons.people, color: Colors.blue,),
-            title: Text('People'),
-          ),
-          ListTile(
-            leading: Icon( Icons.settings, color: Colors.blue,),
-            title: Text('Settings'),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, SettingsPage.routeName);
-            }
-          )
-        ],
-      ),
-    );
-  }
+  //         ListTile(
+  //           leading: Icon( Icons.pages, color: Colors.blue,),
+  //           title: Text('Home'),
+  //           onTap: () => Navigator.pushReplacementNamed(context, HomePage.routeName),
+  //         ),
+  //         ListTile(
+  //           leading: Icon( Icons.party_mode, color: Colors.blue,),
+  //           title: Text('Party'),
+  //         ),
+  //         ListTile(
+  //           leading: Icon( Icons.people, color: Colors.blue,),
+  //           title: Text('People'),
+  //         ),
+  //         ListTile(
+  //           leading: Icon( Icons.settings, color: Colors.blue,),
+  //           title: Text('Settings'),
+  //           onTap: () {
+  //             Navigator.pushReplacementNamed(context, SettingsPage.routeName);
+  //           }
+  //         )
+  //       ],
+  //     ),
+  //   );
+  // }
 
 
 }
